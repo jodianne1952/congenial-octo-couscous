@@ -94,6 +94,7 @@ h1{font:750 28px 'Manrope',sans-serif;letter-spacing:-.8px;color:#172a42;margin:
 .source-summary svg{flex:none;color:#4a79a7;margin-top:1px}
 .source-summary p{margin:0;font-size:10px;line-height:1.6}
 .source-list{display:grid;gap:11px}
+.source-count{color:#78889b;font-size:10px;margin:12px 2px 10px}
 .source-card{display:flex;align-items:flex-start;gap:13px;background:#fff;border:1px solid var(--line);border-radius:9px;padding:17px}
 .source-icon{display:grid;place-items:center;flex:none;width:38px;height:38px;border-radius:9px;background:#eef4fa;color:#4c7199}
 .source-main{min-width:0;flex:1}
