@@ -7,6 +7,7 @@ export type CourtSource = {
   clerkPhone?: string;
   access: 'external-link' | 'api';
   liveIntegration: boolean;
+  onlinePortal: boolean;
   notes: string;
 };
 
@@ -20,6 +21,7 @@ export const COURT_SOURCES: readonly CourtSource[] = [
     clerkPhone: "(937) 544-2344",
     access: "external-link",
     liveIntegration: false,
+    onlinePortal: true,
     notes: "Record Searches selector page links separate CaseLook-style searches for Clerk of Courts, Common Pleas, County Court, and Probate; CaseLook disclaimer warns online data may lag filings/judicial action by at least 24 hours. Clerk is Larry Heller; Legal Division, Room 207, West Union.",
   },
   {
@@ -31,6 +33,7 @@ export const COURT_SOURCES: readonly CourtSource[] = [
     clerkPhone: "(419) 223-8513",
     access: "external-link",
     liveIntegration: false,
+    onlinePortal: true,
     notes: "Clerk Jennifer McBride; office serves Common Pleas, Domestic Relations, and Third District Court of Appeals. A CourtView/eServices public portal is reported for Common Pleas records, but its exact portal URL was not captured from the clerk site during verification, so recordAccessUrl points to the official clerk homepage; records also available by phone or in person at 301 N. Main St., Lima.",
   },
   {
@@ -42,6 +45,7 @@ export const COURT_SOURCES: readonly CourtSource[] = [
     clerkPhone: "419-282-4242",
     access: "external-link",
     liveIntegration: false,
+    onlinePortal: true,
     notes: "Clerk Deborah A. Myers. Clerk site links 'Court Dockets Online' to a Common Pleas e-services case search (session/JavaScript-based; exact portal URL not exposed in page text, so recordAccessUrl is the clerk homepage that links it). Clerk disclaimer: online data provided as available, may lag filings/judicial action by at least 24 hours; verified info by written request or in-person visit.",
   },
   {
@@ -53,6 +57,7 @@ export const COURT_SOURCES: readonly CourtSource[] = [
     clerkPhone: "440-576-3637",
     access: "external-link",
     liveIntegration: false,
+    onlinePortal: true,
     notes: "CourtView/eServices portal linked from the county's Clerk of Courts Legal Department page as 'Courts Record Search'; covers Common Pleas plus Eastern and Western County Courts. Clerk records before May 1993 are not available online; posting delays possible. Protection-order information is not published online (in person only).",
   },
   {
@@ -64,6 +69,7 @@ export const COURT_SOURCES: readonly CourtSource[] = [
     clerkPhone: "740.592.3242",
     access: "external-link",
     liveIntegration: false,
+    onlinePortal: true,
     notes: "Clerk Candy S. Russell. The clerk page's 'Common Pleas Court Docket and Index' section directs users to click the CourtView image on that page to enter the eFiling system, view the online docket, and pay court costs (portal is behind that image link, so recordAccessUrl is the clerk page itself).",
   },
   {
@@ -75,6 +81,7 @@ export const COURT_SOURCES: readonly CourtSource[] = [
     clerkPhone: "419-739-6765",
     access: "external-link",
     liveIntegration: false,
+    onlinePortal: true,
     notes: "Public Access Records page is the entry point to CourtView portals for Common Pleas (felony, civil, domestic relations), Municipal, and Juvenile/Probate/Domestic Relations; CourtView is disclaimer- and CAPTCHA-gated. Common Pleas records before Feb. 1, 2000 may not be online; document images only for filings on/after April 6, 2023. eFiling through CourtView began April 30, 2026.",
   },
   {
@@ -86,6 +93,7 @@ export const COURT_SOURCES: readonly CourtSource[] = [
     clerkPhone: "740-699-2169",
     access: "external-link",
     liveIntegration: false,
+    onlinePortal: true,
     notes: "Clerk Laura A. Zupko. 'Search Court Records' on the clerk homepage links to the Belmont County CourtView eAccess system; online records available from 1995 to the present. Legal Division phone shown is for the Common Pleas General Division records office in St. Clairsville.",
   },
   {
@@ -97,6 +105,7 @@ export const COURT_SOURCES: readonly CourtSource[] = [
     clerkPhone: "(937) 378-3100",
     access: "external-link",
     liveIntegration: false,
+    onlinePortal: true,
     notes: "CaseLook record search (recordSearch.php) for Common Pleas, with a separate Municipal Court CaseLook path; free, no account, requires accepting disclaimer plus CAPTCHA and permits one search criterion at a time. Disclaimer warns data may lag filings/judicial action by at least 24 hours or longer; verified information requires a clerk request or courthouse visit.",
   },
   {
@@ -108,6 +117,7 @@ export const COURT_SOURCES: readonly CourtSource[] = [
     clerkPhone: "513-887-3278",
     access: "external-link",
     liveIntegration: false,
+    onlinePortal: true,
     notes: "Clerk Mary Swain. Public records are accessed via the clerk's eServices site at clerkservices.bcohio.gov (session-based search; the clerk site states many public records may be accessed there, covering Common Pleas General and Domestic Relations case files from 2000-present; older records are at the Butler County Records Center). Area Courts and Probate use separate CaseLook portals.",
   },
   {
@@ -119,6 +129,7 @@ export const COURT_SOURCES: readonly CourtSource[] = [
     clerkPhone: "(330) 627-4886",
     access: "external-link",
     liveIntegration: false,
+    onlinePortal: true,
     notes: "Clerk William R. Wohlwend. Common Pleas lookup uses the Clerk eServices portal at CarrollCountyClerk.org, which the county links as 'Clerk of Courts Search' and also uses for e-filing; the portal is session/JavaScript-gated (loads via a browser-info postback, no static search form). Municipal records use Municipal CaseLook and probate/juvenile records a separate CaseLook portal.",
   },
   {
@@ -130,6 +141,7 @@ export const COURT_SOURCES: readonly CourtSource[] = [
     clerkPhone: "937-484-1047",
     access: "external-link",
     liveIntegration: false,
+    onlinePortal: true,
     notes: "Clerk Amanda L. Hoskinson (site updated; earlier listings named Penny S. Underwood). The clerk's Legal Division offers 'Search court records' via its eServices portal for Common Pleas General Division filings (session-based; linked from the clerk site, so recordAccessUrl is the clerk homepage). Clerk warns online data may lag filings/judicial action by at least 24 hours or longer. Family Court (Domestic Relations/Juvenile/Probate) uses a separate eServices portal.",
   },
   {
@@ -141,6 +153,7 @@ export const COURT_SOURCES: readonly CourtSource[] = [
     clerkPhone: "937-521-1680",
     access: "external-link",
     liveIntegration: false,
+    onlinePortal: true,
     notes: "Online public record search via the eServices portal, listed as the Clerk of Courts Public Record Search; the session-based portal did not load in the research browser. Common Pleas records before 1990 are reportedly not on the website.",
   },
   {
@@ -151,6 +164,7 @@ export const COURT_SOURCES: readonly CourtSource[] = [
     recordAccessUrl: "https://eservices.clermontclerk.org/commonpleas",
     access: "external-link",
     liveIntegration: false,
+    onlinePortal: true,
     notes: "Common Pleas Public Access via Clermont eServices, linked from the official clermontclerk.org homepage, which also links separate Domestic Relations, Municipal, and Probate case access; the eServices portal did not load in the research browser. Common Pleas records before Jan. 1, 1988 are in the clerk's office only.",
   },
   {
@@ -162,6 +176,7 @@ export const COURT_SOURCES: readonly CourtSource[] = [
     clerkPhone: "(937) 382-2316",
     access: "external-link",
     liveIntegration: false,
+    onlinePortal: true,
     notes: "Online case search (CaseLook) for Common Pleas civil, felony criminal, and domestic relations records is linked from the clerk's site; posting may lag at least 24 hours.",
   },
   {
@@ -172,6 +187,7 @@ export const COURT_SOURCES: readonly CourtSource[] = [
     recordAccessUrl: "https://www.ccclerk.org/",
     access: "external-link",
     liveIntegration: false,
+    onlinePortal: true,
     notes: "Case Access on the clerk's site searches Common Pleas records by name through the Benchmark portal. Tip: the index works best with lower-case letters. Records before March 1993 are available in the clerk's office only.",
   },
   {
@@ -183,6 +199,7 @@ export const COURT_SOURCES: readonly CourtSource[] = [
     clerkPhone: "(740) 622-1456",
     access: "external-link",
     liveIntegration: false,
+    onlinePortal: true,
     notes: "Improved Online Records Search via eServices, linked from the clerk's official Records Search page as the online search of Common Pleas case dockets and indices; records generally begin Jan. 1, 1999, document images are available for filings on/after Nov. 1, 2019, and domestic violence cases are excluded. The portal returned 403 to the research browser.",
   },
   {
@@ -193,6 +210,7 @@ export const COURT_SOURCES: readonly CourtSource[] = [
     recordAccessUrl: "https://crawfordcocpcourt.org/",
     access: "external-link",
     liveIntegration: false,
+    onlinePortal: true,
     notes: "The Common Pleas Court homepage links a Case Internet Inquiry for online records — start from the court homepage.",
   },
   {
@@ -203,6 +221,7 @@ export const COURT_SOURCES: readonly CourtSource[] = [
     recordAccessUrl: "https://cpdocket.cp.cuyahogacounty.gov/Search.aspx",
     access: "external-link",
     liveIntegration: false,
+    onlinePortal: true,
     notes: "Clerk of Courts WebDocket search (Search.aspx, opened and verified) — select a search type, then search by case number or party name for Common Pleas civil and criminal dockets. The clerk's services sit under the Common Pleas Court site at cp.cuyahogacounty.gov.",
   },
   {
@@ -214,6 +233,7 @@ export const COURT_SOURCES: readonly CourtSource[] = [
     clerkPhone: "(937) 547-7335",
     access: "external-link",
     liveIntegration: false,
+    onlinePortal: true,
     notes: "The courts site links an online records search for Common Pleas records. There is a delay between court filings and posting.",
   },
   {
@@ -224,6 +244,7 @@ export const COURT_SOURCES: readonly CourtSource[] = [
     recordAccessUrl: "https://defiance-county.com/clerk-of-courts",
     access: "external-link",
     liveIntegration: false,
+    onlinePortal: true,
     notes: "CourtView eServices for Common Pleas civil, felony, domestic, and judgment records is linked from the clerk's page; online data may lag at least 24 hours.",
   },
   {
@@ -235,6 +256,7 @@ export const COURT_SOURCES: readonly CourtSource[] = [
     clerkPhone: "(740) 833-2500",
     access: "external-link",
     liveIntegration: false,
+    onlinePortal: true,
     notes: "Case search is built into the Clerk of Courts website itself: the homepage states the site allows searching Legal Division information on civil, domestic relations, felony criminal, and appellate cases, including dockets, court schedules, and document images.",
   },
   {
@@ -245,6 +267,7 @@ export const COURT_SOURCES: readonly CourtSource[] = [
     recordAccessUrl: "https://www.eriecounty.oh.gov/ClerkofCourts.aspx",
     access: "external-link",
     liveIntegration: false,
+    onlinePortal: true,
     notes: "The Clerk of Courts Public Information Case System (CourtView) for Common Pleas civil, felony criminal, and domestic relations records is linked from the clerk's page.",
   },
   {
@@ -256,6 +279,7 @@ export const COURT_SOURCES: readonly CourtSource[] = [
     clerkPhone: "740-652-7360",
     access: "external-link",
     liveIntegration: false,
+    onlinePortal: true,
     notes: "eServices portal linked from the official clerk site as 'Common Pleas, Public Records Search' (CourtView system named in county research after a recent conversion); clerk maintains Common Pleas and 5th District Court of Appeals records. Portal returned 403 to the text fetcher, but the link is published on the official clerk page.",
   },
   {
@@ -267,6 +291,7 @@ export const COURT_SOURCES: readonly CourtSource[] = [
     clerkPhone: "740-335-6371",
     access: "external-link",
     liveIntegration: false,
+    onlinePortal: true,
     notes: "Common Pleas CaseLook portal entered via the county Record Search page; its disclaimer warns of a posting delay of at least 24 hours. A separate county page covers records prior to 2001.",
   },
   {
@@ -278,6 +303,7 @@ export const COURT_SOURCES: readonly CourtSource[] = [
     clerkPhone: "614-525-3600",
     access: "external-link",
     liveIntegration: false,
+    onlinePortal: true,
     notes: "Case Information Online (CIO) searches Common Pleas General Division, Domestic Relations, and 10th District Court of Appeals cases. Homepage and CIO page returned 429/403 to the text fetcher; URLs are verbatim from search results and a same-domain clerk page (Legal Divisions) was opened successfully.",
   },
   {
@@ -289,6 +315,7 @@ export const COURT_SOURCES: readonly CourtSource[] = [
     clerkPhone: "419-337-9230",
     access: "external-link",
     liveIntegration: false,
+    onlinePortal: true,
     notes: "CaseLook public-access portal linked as 'Online Records Search' from the county's official Records Search page, which warns of a delay between court filings/judicial action and posting. Eastern and Western District Courts have their own separate records searches on the county site.",
   },
   {
@@ -300,6 +327,7 @@ export const COURT_SOURCES: readonly CourtSource[] = [
     clerkPhone: "740-446-4612",
     access: "external-link",
     liveIntegration: false,
+    onlinePortal: false,
     notes: "The county website is being restructured and the clerk's page could not be verified online. The Legal Division is at 18 Locust Street, Gallipolis — call the clerk for records.",
   },
   {
@@ -311,6 +339,7 @@ export const COURT_SOURCES: readonly CourtSource[] = [
     clerkPhone: "440-279-1960",
     access: "external-link",
     liveIntegration: false,
+    onlinePortal: true,
     notes: "Common Pleas eServices (eservicesCP) case search; the portal URL is published on the official courts.geauga.oh.gov site, which says case dockets can be viewed online or at the Clerk of Courts Legal Office, 100 Short Court Street, Suite 300, Chardon. Direct portal fetch was rate-limited (429) in this check.",
   },
   {
@@ -322,6 +351,7 @@ export const COURT_SOURCES: readonly CourtSource[] = [
     clerkPhone: "937-562-5290",
     access: "external-link",
     liveIntegration: false,
+    onlinePortal: true,
     notes: "CourtView / eServices portal on the official Greene County courts domain (JavaScript/captcha shell). The county site FAQ says Greene County Common Pleas Court cases from 1982 to the present can be searched online through the Clerk of Courts; clerk office is at 45 N. Detroit St., Xenia.",
   },
   {
@@ -333,6 +363,7 @@ export const COURT_SOURCES: readonly CourtSource[] = [
     clerkPhone: "740-432-9230",
     access: "external-link",
     liveIntegration: false,
+    onlinePortal: true,
     notes: "Clerk page itself offers online access to the Common Pleas Court - General Division case docket ('Search Public Records' / download court documents) via its eServices/eAccess system; the separate eaccess.guernseycounty.org host did not resolve in the text fetcher, so recordAccessUrl points to the verified clerk page that provides the search.",
   },
   {
@@ -344,6 +375,7 @@ export const COURT_SOURCES: readonly CourtSource[] = [
     clerkPhone: "513-946-5656",
     access: "external-link",
     liveIntegration: false,
+    onlinePortal: true,
     notes: "Clerk's Records Search on courtclerk.org (official site; homepage is courtclerk.org) covers Common Pleas civil/criminal, Municipal, Domestic Relations, and First District Court of Appeals cases, searchable by name, case number, court date, ticket, attorney, or judge. Direct records-search fetch was rate-limited (429) in this check; the URL is verbatim from published sources and the clerk's About page on the same site was opened.",
   },
   {
@@ -355,6 +387,7 @@ export const COURT_SOURCES: readonly CourtSource[] = [
     clerkPhone: "419-424-7037",
     access: "external-link",
     liveIntegration: false,
+    onlinePortal: true,
     notes: "County research describes a Hancock County Court eServices portal for Common Pleas/domestic relations records, and the clerk's system is vendor-hosted (attorney e-filing via courtsvc.co.hancock.oh.us / equivant, mandatory for attorneys from Jan. 1, 2026), but the exact public search URL was not captured from an official page in this check, so recordAccessUrl is the verified clerk page. Records before January 1985 require an in-person visit.",
   },
   {
@@ -366,6 +399,7 @@ export const COURT_SOURCES: readonly CourtSource[] = [
     clerkPhone: "419-674-2278",
     access: "external-link",
     liveIntegration: false,
+    onlinePortal: true,
     notes: "Clerk site states it offers online access to court records and e-filing; its legal disclaimer warns of a posting delay of at least 24 hours. The shared Hardin Courts site also hosts the Municipal Court on a separate section, and a recordSearch.php form on the same domain is cited in court filings for docket access.",
   },
   {
@@ -377,6 +411,7 @@ export const COURT_SOURCES: readonly CourtSource[] = [
     clerkPhone: "740-942-8863",
     access: "external-link",
     liveIntegration: false,
+    onlinePortal: true,
     notes: "Clerk page has a 'Click HERE for Common Pleas Court Record Search' link to an IP-based portal (portal blocked the research fetcher) and an eFiling link; clerk Legal, Civil, Domestic Relations and 7th District Appeals divisions listed on the page.",
   },
   {
@@ -388,6 +423,7 @@ export const COURT_SOURCES: readonly CourtSource[] = [
     clerkPhone: "419-592-5886",
     access: "external-link",
     liveIntegration: false,
+    onlinePortal: true,
     notes: "CourtView Common Pleas Case Search linked from the clerk page; clerk states CourtView reflects docket entries, is updated in real time excluding weekends and legal holidays with a filing/posting delay, and court records prior to 1995 are not available on CourtView. Portal returned no extractable text to the fetcher.",
   },
   {
@@ -399,6 +435,7 @@ export const COURT_SOURCES: readonly CourtSource[] = [
     clerkPhone: "937-393-9957",
     access: "external-link",
     liveIntegration: false,
+    onlinePortal: true,
     notes: "Common Pleas Court site (General and Domestic Relations divisions) has a CourtView records search button; the court's FAQ directs users to CourtView and its 'events' button for hearing dates. Copies of court papers are obtained from the Clerk's office at the courthouse in Hillsboro.",
   },
   {
@@ -410,6 +447,7 @@ export const COURT_SOURCES: readonly CourtSource[] = [
     clerkPhone: "740-385-2616",
     access: "external-link",
     liveIntegration: false,
+    onlinePortal: true,
     notes: "Internet Inquiry linked from the clerk page lets the public view Domestic, Civil and Felony Criminal filings, Fourth District Court of Appeals cases originating in Hocking Common Pleas, and Certificate of Judgment filings; public cases begin January 1, 1996, except Certificates of Judgment, which begin January 1, 2003.",
   },
   {
@@ -421,6 +459,7 @@ export const COURT_SOURCES: readonly CourtSource[] = [
     clerkPhone: "(330) 674-1876",
     access: "external-link",
     liveIntegration: false,
+    onlinePortal: true,
     notes: "Clerk of Courts eAccess portal at courts.co.holmes.oh.us is listed as 'Case information from computerized records' alongside the clerk's official county pages; the portal returned no extractable text to the fetcher (JavaScript/session portal). Clerk is Ronda P. Steimel, 1 E. Jackson St., Millersburg.",
   },
   {
@@ -432,6 +471,7 @@ export const COURT_SOURCES: readonly CourtSource[] = [
     clerkPhone: "(419) 668-5113",
     access: "external-link",
     liveIntegration: false,
+    onlinePortal: true,
     notes: "CaseLook record search for Huron County Common Pleas Court (civil, felony criminal, domestic relations and appeals); clerk disclaimer warns there will be a delay between court filings and judicial action and posting, which could be at least 24 hours and may be longer.",
   },
   {
@@ -443,6 +483,7 @@ export const COURT_SOURCES: readonly CourtSource[] = [
     clerkPhone: "(740) 286-2006",
     access: "external-link",
     liveIntegration: false,
+    onlinePortal: true,
     notes: "CourtView 2000 online records linked by the Clerk (Seth I. Michael, Legal Division, 226 East Main St. #9, Jackson); CourtView information is current as of the previous business day and updated every 24 hours excluding weekends and legal holidays, and users should search name only or case number only, not both.",
   },
   {
@@ -454,6 +495,7 @@ export const COURT_SOURCES: readonly CourtSource[] = [
     clerkPhone: "740-283-8583",
     access: "external-link",
     liveIntegration: false,
+    onlinePortal: false,
     notes: "No online docket portal found on the Clerk of Courts site — the site provides forms, filing fees and contact information, so Common Pleas records are available by phone or in person. The Clerk (Andrew D. Plesich) also serves the three county District Courts, which are a separate lower-court system.",
   },
   {
@@ -465,6 +507,7 @@ export const COURT_SOURCES: readonly CourtSource[] = [
     clerkPhone: "(740) 393-6788",
     access: "external-link",
     liveIntegration: false,
+    onlinePortal: true,
     notes: "Online access to Common Pleas records is via the Clerk's CourtView / eServices gateway; the clerk's county page hosts local rules, forms, fee schedule and electronic filing procedures, and its extracted text did not expose a direct portal URL, so record search is entered via the clerk page. Clerk's office: 117 East High Street, Suite 201, Mount Vernon.",
   },
   {
@@ -476,6 +519,7 @@ export const COURT_SOURCES: readonly CourtSource[] = [
     clerkPhone: "440-350-2657",
     access: "external-link",
     liveIntegration: false,
+    onlinePortal: true,
     notes: "eAccess / eServices court records portal on phoenix.lakecountyohio.gov (search by case number and parties); the portal returned 403 to the research fetcher. The Clerk's Legal Division page references record search and gives an e-Services support line, 440-350-2222.",
   },
   {
@@ -487,6 +531,7 @@ export const COURT_SOURCES: readonly CourtSource[] = [
     clerkPhone: "740-533-4355",
     access: "external-link",
     liveIntegration: false,
+    onlinePortal: true,
     notes: "Clerk's eServices / CourtView site (Michael P. Patterson, 111 South 4th Street, Ironton) is both the clerk's web presence and the online records/e-filing entry; the site returned 403 to the research fetcher, and the clerk page lists document types that cannot be e-filed and must be mailed in.",
   },
   {
@@ -498,6 +543,7 @@ export const COURT_SOURCES: readonly CourtSource[] = [
     clerkPhone: "740-670-5796",
     access: "external-link",
     liveIntegration: false,
+    onlinePortal: true,
     notes: "Common Pleas Case Records Search gateway on the county site (General, Domestic Relations, and 5th District Appeals). Clerk migrated to a new case management system in June 2025; dockets and filings update online at about 15-minute intervals during business hours. Protection-order case types are excluded from remote access.",
   },
   {
@@ -509,6 +555,7 @@ export const COURT_SOURCES: readonly CourtSource[] = [
     clerkPhone: "937-599-7275",
     access: "external-link",
     liveIntegration: false,
+    onlinePortal: true,
     notes: "CourtView eServices 'Records Search' portal linked from the clerk homepage; covers Court of Common Pleas and Family Court cases, searchable by party name, case number, or filing date with no login for basic search. Portal blocks automated fetchers (403), but is the live public link from the official page.",
   },
   {
@@ -520,6 +567,7 @@ export const COURT_SOURCES: readonly CourtSource[] = [
     clerkPhone: "440-329-5624",
     access: "external-link",
     liveIntegration: false,
+    onlinePortal: true,
     notes: "Clerk eServices portal linked directly from the official Clerk of Courts page ('Search Domestic Relations, Civil, Criminal and Court of Appeals Court Records'). Computerized Common Pleas records online since 1988, available 24/7; includes Court Calendars, Quick Index, General Index, and Docket Sheets. Probate and Juvenile are excluded.",
   },
   {
@@ -530,6 +578,7 @@ export const COURT_SOURCES: readonly CourtSource[] = [
     recordAccessUrl: "https://www.co.lucas.oh.us/3707/Online-Dockets",
     access: "external-link",
     liveIntegration: false,
+    onlinePortal: true,
     notes: "County 'Online Dockets' hub page. As of January 6, 2026, General Division case information moved to two Tyler Technologies products - re:SearchOH and Justice Case Access - both requiring an account; the legacy General Division online dockets link is being phased out. Domestic Relations Online Dockets are separate.",
   },
   {
@@ -541,6 +590,7 @@ export const COURT_SOURCES: readonly CourtSource[] = [
     clerkPhone: "(740) 852-9776",
     access: "external-link",
     liveIntegration: false,
+    onlinePortal: true,
     notes: "Clerk's county page is the access point; the Clerk of Courts records-search page embeds a Common Pleas case portal for civil, felony criminal, domestic, judgment, and appeal files. Some document images use the legacy DjVu format/plug-in, so docket access and document-image access are not the same. No separately published direct portal URL was found.",
   },
   {
@@ -552,6 +602,7 @@ export const COURT_SOURCES: readonly CourtSource[] = [
     clerkPhone: "330-740-2104",
     access: "external-link",
     liveIntegration: false,
+    onlinePortal: true,
     notes: "eCourts CourtView eServices 'General Case Search' portal for Common Pleas records, referenced by the Clerk of Courts (case numbers entered in format such as 2021 CV 00738). The same clerk's office also serves the Boardman, Sebring, Austintown, and Canfield county courts; Probate Court uses a separate Tyler-hosted search.",
   },
   {
@@ -563,6 +614,7 @@ export const COURT_SOURCES: readonly CourtSource[] = [
     clerkPhone: "740-223-4270",
     access: "external-link",
     liveIntegration: false,
+    onlinePortal: true,
     notes: "Clerk of Courts Legal Division (100 N. Main St., 2nd Floor) links a 'Records Search/E-Filing' portal for Common Pleas records; the portal is JavaScript/Wicket-based and its direct URL was not exposed in page text, so start from the county site and the Legal Division (phone shown is Legal Division). Family Division (probate, domestic relations, juvenile) has its own related portal; Marion Municipal Court uses CaseLook and warns online data may lag at least 24 hours.",
   },
   {
@@ -574,6 +626,7 @@ export const COURT_SOURCES: readonly CourtSource[] = [
     clerkPhone: "330-725-9722",
     access: "external-link",
     liveIntegration: false,
+    onlinePortal: true,
     notes: "Tyler Odyssey public portal linked from the Clerk of Courts site as 'Docket Search' (Smart Search by party name or case number, plus Search Hearings); covers Common Pleas, Domestic Relations, and public Probate cases. Portal needs JavaScript/cookies and some document downloads are TIFF files. Pre-2008 Common Pleas records are handled by the Clerk's Archives Department.",
   },
   {
@@ -585,6 +638,7 @@ export const COURT_SOURCES: readonly CourtSource[] = [
     clerkPhone: "(740) 992-5290",
     access: "external-link",
     liveIntegration: false,
+    onlinePortal: true,
     notes: "CourtView eAccess portal (meigseaccess.com) linked from the clerk's site. Per the Common Pleas local rules, most Common Pleas records - including complete images of filings - are available through the Clerk of Courts website or directly through the court's case management system at meigseaccess.com. Phone shown is the Legal Division.",
   },
   {
@@ -596,6 +650,7 @@ export const COURT_SOURCES: readonly CourtSource[] = [
     clerkPhone: "(419) 586-6461",
     access: "external-link",
     liveIntegration: false,
+    onlinePortal: true,
     notes: "The Clerk's page on the official county site is itself a disclaimer gateway into the Clerk's online documents index for Mercer County Common Pleas Court. The clerk states the information is updated daily, that online documents do not constitute the official court documents, and that changes may be made without notice. No separate branded portal was found.",
   },
   {
@@ -607,6 +662,7 @@ export const COURT_SOURCES: readonly CourtSource[] = [
     clerkPhone: "(937) 440-6010",
     access: "external-link",
     liveIntegration: false,
+    onlinePortal: true,
     notes: "eServices portal linked from the county Clerk of Courts page as 'Public Access'; covers Miami County Common Pleas and Municipal Court case information maintained by the Clerk. Portal notice: e-filing becomes mandatory June 1, 2026. Phone shown is the Common Pleas Clerk of Courts office in Troy.",
   },
   {
@@ -618,6 +674,7 @@ export const COURT_SOURCES: readonly CourtSource[] = [
     clerkPhone: "(740) 472-0761",
     access: "external-link",
     liveIntegration: false,
+    onlinePortal: true,
     notes: "CaseLook public access search linked from the clerk page as 'New Case Public Access Search'; portal disclaimer warns of a posting delay of at least 24 hours, possibly longer.",
   },
   {
@@ -628,6 +685,7 @@ export const COURT_SOURCES: readonly CourtSource[] = [
     recordAccessUrl: "https://pro.mcOhio.org/Default.cshtml",
     access: "external-link",
     liveIntegration: false,
+    onlinePortal: true,
     notes: "Public Records Online (PRO) v3 portal maintained by the Clerk; document images normally available 48 to 72 hours after filing; covers Common Pleas General Division, Domestic Relations, County Municipal Court and Second District Court of Appeals cases.",
   },
   {
@@ -639,6 +697,7 @@ export const COURT_SOURCES: readonly CourtSource[] = [
     clerkPhone: "740-962-4752",
     access: "external-link",
     liveIntegration: false,
+    onlinePortal: false,
     notes: "No online docket portal found on the official clerk page — records available by phone or in person.",
   },
   {
@@ -650,6 +709,7 @@ export const COURT_SOURCES: readonly CourtSource[] = [
     clerkPhone: "(419) 947-2085",
     access: "external-link",
     liveIntegration: false,
+    onlinePortal: true,
     notes: "CourtView eServices portal linked from the clerk page for court case payments, eFiling and records access.",
   },
   {
@@ -661,6 +721,7 @@ export const COURT_SOURCES: readonly CourtSource[] = [
     clerkPhone: "(740) 455-7104",
     access: "external-link",
     liveIntegration: false,
+    onlinePortal: true,
     notes: "Clerk Online Records System via eServices ('Open Online Search' on the clerk page); online indexes begin 10/17/1994, when the court became automated; certified copies in person only.",
   },
   {
@@ -672,6 +733,7 @@ export const COURT_SOURCES: readonly CourtSource[] = [
     clerkPhone: "740.732.4045",
     access: "external-link",
     liveIntegration: false,
+    onlinePortal: true,
     notes: "CaseLook record search on the Noble County Court of Common Pleas site (Clerk of Court listed in court staff); disclaimer warns of a posting delay of at least 24 hours, possibly longer.",
   },
   {
@@ -683,6 +745,7 @@ export const COURT_SOURCES: readonly CourtSource[] = [
     clerkPhone: "419-734-6755",
     access: "external-link",
     liveIntegration: false,
+    onlinePortal: true,
     notes: "Record Search portal linked from the Common Pleas Court site and the Clerk of Courts page; searchable by name, case number, citation number and other fields.",
   },
   {
@@ -693,6 +756,7 @@ export const COURT_SOURCES: readonly CourtSource[] = [
     recordAccessUrl: "http://www.pauldingcommonpleas.com/clerk-of-courts.html",
     access: "external-link",
     liveIntegration: false,
+    onlinePortal: false,
     notes: "No online docket portal found on the official Common Pleas / Clerk of Courts site — records available by phone or in person.",
   },
   {
@@ -704,6 +768,7 @@ export const COURT_SOURCES: readonly CourtSource[] = [
     clerkPhone: "(740) 342-1022",
     access: "external-link",
     liveIntegration: false,
+    onlinePortal: true,
     notes: "CaseLook record search via the Perry County Common Pleas Court site (pccommonpleas.com), linked from the county Clerk of Courts page; disclaimer warns of a posting delay of at least 24 hours, possibly longer.",
   },
   {
@@ -715,6 +780,7 @@ export const COURT_SOURCES: readonly CourtSource[] = [
     clerkPhone: "740-474-5231",
     access: "external-link",
     liveIntegration: false,
+    onlinePortal: true,
     notes: "Clerk homepage is the front door for the Common Pleas CourtView case inquiry and public-records requests; the direct portal URL was not exposed in the clerk site's text, so the clerk homepage is given as the access URL.",
   },
   {
@@ -725,6 +791,7 @@ export const COURT_SOURCES: readonly CourtSource[] = [
     recordAccessUrl: "https://commonpleascourt.pikecounty.oh.gov/",
     access: "external-link",
     liveIntegration: false,
+    onlinePortal: false,
     notes: "The court site links a Docket Search portal, but the portal was not working when checked — start from the court homepage or call the clerk.",
   },
   {
@@ -736,6 +803,7 @@ export const COURT_SOURCES: readonly CourtSource[] = [
     clerkPhone: "(330) 297-3644",
     access: "external-link",
     liveIntegration: false,
+    onlinePortal: true,
     notes: "Online records via the Portage County eServices (CourtView) portal linked from the clerk page; covers Common Pleas and Municipal Court cases from 1992 forward.",
   },
   {
@@ -747,6 +815,7 @@ export const COURT_SOURCES: readonly CourtSource[] = [
     clerkPhone: "(937) 456-8160",
     access: "external-link",
     liveIntegration: false,
+    onlinePortal: true,
     notes: "Clerk site links 'Search Online Court Records' to the CourtView portal for Common Pleas cases; the portal uses a JavaScript browser-information step before the search form loads.",
   },
   {
@@ -758,6 +827,7 @@ export const COURT_SOURCES: readonly CourtSource[] = [
     clerkPhone: "(419) 523-3110",
     access: "external-link",
     liveIntegration: false,
+    onlinePortal: true,
     notes: "County Common Pleas page includes a 'Common Pleas Court Record Search' public-access link (CourtView / Court View 2000) reflecting Clerk docket entries; a separate portal serves Municipal Court. The Clerk serves both courts.",
   },
   {
@@ -769,6 +839,7 @@ export const COURT_SOURCES: readonly CourtSource[] = [
     clerkPhone: "(419) 774-3526",
     access: "external-link",
     liveIntegration: false,
+    onlinePortal: true,
     notes: "Case Inquiry & Court Calendars on the court site opens CourtView eAccess (CAPTCHA-gated) for Common Pleas case search; historical index books and dockets are via QuickLink. Clerk: Heidi Ewing.",
   },
   {
@@ -780,6 +851,7 @@ export const COURT_SOURCES: readonly CourtSource[] = [
     clerkPhone: "(740) 702-3010",
     access: "external-link",
     liveIntegration: false,
+    onlinePortal: false,
     notes: "Clerk page states computerized court records go back to November 1989; no separate public portal URL is exposed on the clerk page, so online access routes through the clerk site, with records also available by phone or in person.",
   },
   {
@@ -791,6 +863,7 @@ export const COURT_SOURCES: readonly CourtSource[] = [
     clerkPhone: "(419) 334-6161",
     access: "external-link",
     liveIntegration: false,
+    onlinePortal: true,
     notes: "Record search is hosted on the Clerk's own site (sandusky-county.org); when checked it displayed 'System Temporarily Unavailable' due to a conversion to a new software system.",
   },
   {
@@ -802,6 +875,7 @@ export const COURT_SOURCES: readonly CourtSource[] = [
     clerkPhone: "(740) 355-8218",
     access: "external-link",
     liveIntegration: false,
+    onlinePortal: true,
     notes: "Official online records portal. Filings may be delayed; verify time-sensitive entries with the clerk.",
   },
   {
@@ -813,6 +887,7 @@ export const COURT_SOURCES: readonly CourtSource[] = [
     clerkPhone: "(419) 447-0671",
     access: "external-link",
     liveIntegration: false,
+    onlinePortal: true,
     notes: "Common Pleas records are searched via the Clerk of Courts CaseLook / Court Case Inquiry portal covering cases from January 1, 1993; postings may lag at least 24 hours after filing or court action.",
   },
   {
@@ -824,6 +899,7 @@ export const COURT_SOURCES: readonly CourtSource[] = [
     clerkPhone: "(937) 498-7221",
     access: "external-link",
     liveIntegration: false,
+    onlinePortal: true,
     notes: "Public record search via the Clerk's eServices portal covers Court of Appeals, criminal, civil, domestic relations and judgment lien cases; records before October 1, 1987 are not available online.",
   },
   {
@@ -835,6 +911,7 @@ export const COURT_SOURCES: readonly CourtSource[] = [
     clerkPhone: "(330) 451-7801",
     access: "external-link",
     liveIntegration: false,
+    onlinePortal: true,
     notes: "Online case docket via Stark CJIS, which merges Common Pleas (civil, criminal, domestic relations) and the three municipal court databases into one search; Probate Division records are separate and not in CJIS.",
   },
   {
@@ -846,6 +923,7 @@ export const COURT_SOURCES: readonly CourtSource[] = [
     clerkPhone: "(330) 643-2211",
     access: "external-link",
     liveIntegration: false,
+    onlinePortal: true,
     notes: "Clerk site (Clerk Tavia Galonski) links directly to its online Record Search for Common Pleas General, Domestic Relations and 9th District Court of Appeals cases. County officials have warned of an imposter clerk website; clerkweb.summitoh.net is the official site.",
   },
   {
@@ -857,6 +935,7 @@ export const COURT_SOURCES: readonly CourtSource[] = [
     clerkPhone: "(330) 675-2557",
     access: "external-link",
     liveIntegration: false,
+    onlinePortal: false,
     notes: "No online docket portal found on the official Common Pleas page — it lists public computer terminals at the courthouse (party-name or case-number search), $5 staff name searches, and phone/in-person access",
   },
   {
@@ -868,6 +947,7 @@ export const COURT_SOURCES: readonly CourtSource[] = [
     clerkPhone: "330-365-3243",
     access: "external-link",
     liveIntegration: false,
+    onlinePortal: true,
     notes: "CourtView eServices Docket Search linked as the main heading on the official clerk page; the same eServices portal hosts attorney eFiling for Common Pleas",
   },
   {
@@ -879,6 +959,7 @@ export const COURT_SOURCES: readonly CourtSource[] = [
     clerkPhone: "(937) 645-3006",
     access: "external-link",
     liveIntegration: false,
+    onlinePortal: true,
     notes: "eServices Public Records Search linked from the official Clerk site; cases January 1990 to present, imaged documents from January 1, 2002, and the official disclaimer says documents are updated every 72 hours",
   },
   {
@@ -890,6 +971,7 @@ export const COURT_SOURCES: readonly CourtSource[] = [
     clerkPhone: "419-238-1022",
     access: "external-link",
     liveIntegration: false,
+    onlinePortal: true,
     notes: "CourtView eServices portal for Common Pleas civil, felony criminal, and domestic relations records; session- and JavaScript-based portal (requires a live browser session)",
   },
   {
@@ -901,6 +983,7 @@ export const COURT_SOURCES: readonly CourtSource[] = [
     clerkPhone: "740-596-3001",
     access: "external-link",
     liveIntegration: false,
+    onlinePortal: true,
     notes: "COURTVIEW docket search ('Search Court Records' link on the official clerk page); clerk states data is in real time except weekends and legal holidays with posting delays possible, and records prior to the January 1, 1998 automation date are not available on COURTVIEW",
   },
   {
@@ -912,6 +995,7 @@ export const COURT_SOURCES: readonly CourtSource[] = [
     clerkPhone: "513-695-1120",
     access: "external-link",
     liveIntegration: false,
+    onlinePortal: true,
     notes: "Clerk's own Case Inquiry for Civil, Criminal, and Domestic Relations cases by name or case number; full case histories since May 1991 (1980–May 1991 caption/reference only), docket updated at least three times per business day plus overnight, and filed documents are not available in the inquiry system",
   },
   {
@@ -923,6 +1007,7 @@ export const COURT_SOURCES: readonly CourtSource[] = [
     clerkPhone: "740-373-6623",
     access: "external-link",
     liveIntegration: false,
+    onlinePortal: true,
     notes: "CVEAccess eServices session-based public records search; clerk phone is the county main line (Clerk ext. 2501, Legal Division ext. 2503), and older records are on microfilm/microfiche through the Legal Division",
   },
   {
@@ -934,6 +1019,7 @@ export const COURT_SOURCES: readonly CourtSource[] = [
     clerkPhone: "330-287-5650",
     access: "external-link",
     liveIntegration: false,
+    onlinePortal: true,
     notes: "Public Access & E-File landing page on the official clerk site (Benchmark portal covering Common Pleas and Municipal Court); case information from 1995 to present, searchable by name or case number, with Probate/Juvenile records in a separate environment since September 7, 2018",
   },
   {
@@ -944,6 +1030,7 @@ export const COURT_SOURCES: readonly CourtSource[] = [
     recordAccessUrl: "https://www.williamscountyoh.gov/35/Services",
     access: "external-link",
     liveIntegration: false,
+    onlinePortal: false,
     notes: "No working online docket portal verified — a 'Court Record Search' is listed on the county Services page but its linked Records Search page returned 404 during verification, and the Legal Division page states public records are available for inspection during regular business hours",
   },
   {
@@ -955,6 +1042,7 @@ export const COURT_SOURCES: readonly CourtSource[] = [
     clerkPhone: "(419) 354-9280",
     access: "external-link",
     liveIntegration: false,
+    onlinePortal: true,
     notes: "CourtView eServices public docket search (pub.clerkofcourt subdomain) searchable by party name or case number; session- and JavaScript-based portal",
   },
   {
@@ -966,6 +1054,7 @@ export const COURT_SOURCES: readonly CourtSource[] = [
     clerkPhone: "(419) 294-1432",
     access: "external-link",
     liveIntegration: false,
+    onlinePortal: true,
     notes: "CaseLook record search on the clerk's own site; its disclaimer warns there will be a delay between court filings/judicial action and posting of at least twenty-four hours, and that verified information should be requested from the Clerk or in person",
   },
 ];
