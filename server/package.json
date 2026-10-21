@@ -1,0 +1,1 @@
+{"description":"Ohio Docket Hub Phase 1 demo server (zero-dependency Node.js, stdlib http only). Demo data only; in-memory saved cases; no real auth.","engines":{"node":">=18"},"main":"server.js","name":"ohio-docket-hub-server","private":true,"scripts":{"start":"node server.js","test":"node smoke-test.js"},"version":"0.1.0"}
