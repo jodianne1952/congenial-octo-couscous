@@ -2,7 +2,7 @@ import React, { useMemo, useState } from 'react';
 import { createRoot } from 'react-dom/client';
 import {
   ArrowLeft, ArrowUpRight, Bookmark, Check, ChevronDown, Clock3,
-  ExternalLink, FileText, Landmark, MapPin, Menu, Search, SearchX,
+  ExternalLink, FileText, Landmark, MapPin, Menu, Phone, Search, SearchX,
   Settings2, ShieldCheck, Star, X,
 } from 'lucide-react';
 import { COURT_SOURCES } from './courts/sources';
@@ -47,6 +47,30 @@ const demoCases: CaseRecord[] = [
       { date: 'Jan 9, 2026', title: 'Judgment entered', note: 'Fictional sample docket entry.' },
     ],
   },
+  {
+    id: 'DEMO-2026-CR-0213', name: 'State v. Example', county: 'Cuyahoga',
+    court: 'Court of Common Pleas', status: 'Closed', filed: 'Aug 4, 2026',
+    category: 'Criminal', events: [
+      { date: 'Aug 4, 2026', title: 'Indictment filed', note: 'Fictional sample docket entry.' },
+      { date: 'Oct 1, 2026', title: 'Judgment entered', note: 'Fictional sample docket entry.' },
+    ],
+  },
+  {
+    id: 'DEMO-2026-CV-0455', name: 'Sample v. Example Properties', county: 'Hamilton',
+    court: 'Municipal Court', status: 'Open', filed: 'Sep 30, 2026',
+    category: 'Civil', events: [
+      { date: 'Sep 30, 2026', title: 'Complaint filed', note: 'Fictional sample docket entry.' },
+      { date: 'Oct 20, 2026', title: 'Mediation scheduled', note: 'Fictional sample docket entry.' },
+    ],
+  },
+  {
+    id: 'DEMO-2025-CR-0176', name: 'State v. Sample', county: 'Summit',
+    court: 'Court of Common Pleas', status: 'Open', filed: 'Dec 2, 2025',
+    category: 'Criminal', events: [
+      { date: 'Dec 2, 2025', title: 'Arraignment held', note: 'Fictional sample docket entry.' },
+      { date: 'Oct 12, 2026', title: 'Pretrial hearing scheduled', note: 'Fictional sample docket entry.' },
+    ],
+  },
 ];
 
 const pages: { name: Page; icon: typeof Search }[] = [
@@ -87,6 +111,8 @@ function App() {
       return matchesQuery && matchesCounty && matchesCategory && matchesPage;
     });
   }, [category, county, page, query, saved]);
+
+  const visibleSources = useMemo(() => COURT_SOURCES.filter(source => source.county.toLowerCase().includes(sourceQuery.trim().toLowerCase())), [sourceQuery]);
 
   function toggleSaved(id: string) {
     const next = saved.includes(id) ? saved.filter(item => item !== id) : [...saved, id];
@@ -160,7 +186,7 @@ function App() {
               </section>
               <section className="results-section">
                 <div className="section-heading"><div><h2>Sample cases</h2><p>These examples demonstrate how case results will appear.</p></div><span className="sample-tag">FICTIONAL DATA</span></div>
-                {results.length ? <div className="case-grid">{results.map(record => <CaseCard key={record.id} record={record} isSaved={saved.includes(record.id)} onOpen={() => setSelected(record)} onToggleSaved={() => toggleSaved(record.id)} />)}</div> : <EmptyState title="No sample cases found" text="Try another name, number, county, or case type." icon={<SearchX size={23} />} />}
+                {results.length ? <div className="case-grid">{results.map(record => <CaseCard key={record.id} record={record} isSaved={saved.includes(record.id)} onOpen={() => setSelected(record)} onToggleSaved={() => toggleSaved(record.id)} />)}</div> : <EmptyState title="No sample cases found" text="This demo holds only fictional sample cases, so real names and case numbers won't appear here. For a real case, use your county's official records portal." icon={<SearchX size={23} />} action={<button className="button-primary" onClick={() => navigate('Official court links')}>Find your county's portal <ArrowUpRight size={15} /></button>} />}
               </section>
               <section className="official-cta"><div className="cta-icon"><Landmark size={21} /></div><div><h3>Looking for a real docket?</h3><p>Browse official court links and confirm records directly with the clerk.</p></div><button className="button-secondary" onClick={() => navigate('Official court links')}>View court links <ArrowUpRight size={16} /></button></section>
             </>
@@ -169,10 +195,10 @@ function App() {
               <div className="page-heading"><div><div className="eyebrow">SOURCE DIRECTORY</div><h1>Official court links</h1><p>Open court-provided records portals and verify case information with the clerk.</p></div></div>
               <div className="source-summary"><ShieldCheck size={18} /><p>Links below lead to external court websites. Availability and update timing vary by court. The hub does not import or monitor these records.</p></div>
               <section className="search-panel" aria-label="Find your county"><label className="search-label" htmlFor="county-search">Find your county</label><div className="search-input-wrap"><Search size={19} /><input id="county-search" value={sourceQuery} onChange={event => setSourceQuery(event.target.value)} placeholder="Start typing a county name — for example, Scioto" /></div></section>
-              <div className="source-list">{COURT_SOURCES.filter(source => source.county.toLowerCase().includes(sourceQuery.trim().toLowerCase())).map(source => <article className="source-card" key={`${source.county}-${source.division}`}>
-                <div className="source-icon"><Landmark size={20} /></div><div className="source-main"><div className="source-kicker">{source.county.toUpperCase()} COUNTY · {source.division.toUpperCase()}</div><h2>{source.name}</h2><p>{source.notes}</p>{source.clerkPhone && <p className="clerk-phone">Clerk’s office: <a href={`tel:${source.clerkPhone.replace(/[^0-9+]/g, '')}`}>{source.clerkPhone}</a></p>}<div className="source-links"><a className="button-primary" href={source.recordAccessUrl} target="_blank" rel="noopener noreferrer">Open records portal <ExternalLink size={15} /></a><a className="text-link" href={source.officialUrl} target="_blank" rel="noopener noreferrer">Court website <ArrowUpRight size={14} /></a></div></div>
-                <span className="external-badge"><ExternalLink size={13} /> External site</span>
-              </article>)}</div>
+              <p className="source-count">Showing {visibleSources.length} of {COURT_SOURCES.length} counties</p>{visibleSources.length === 0 ? <EmptyState title="No county matches that name" text="Check the spelling — every Ohio county is listed here. If you're not sure of the county, a neighboring county's clerk can usually point you to the right office." icon={<SearchX size={23} />} action={<button className="button-primary" onClick={() => setSourceQuery('')}>Clear search</button>} /> : <div className="source-list">{visibleSources.map(source => <article className="source-card" key={`${source.county}-${source.division}`}>
+                <div className="source-icon"><Landmark size={20} /></div><div className="source-main"><div className="source-kicker">{source.county.toUpperCase()} COUNTY · {source.division.toUpperCase()}</div><h2>{source.name}</h2><p>{source.notes}</p>{source.clerkPhone && <p className="clerk-phone">Clerk’s office: <a href={`tel:${source.clerkPhone.replace(/[^0-9+]/g, '')}`}>{source.clerkPhone}</a></p>}<div className="source-links">{source.onlinePortal ? <a className="button-primary" href={source.recordAccessUrl} target="_blank" rel="noopener noreferrer">Open records portal <ExternalLink size={15} /></a> : (source.clerkPhone ? <a className="button-primary" href={`tel:${source.clerkPhone.replace(/[^0-9+]/g, '')}`}>Call the clerk <Phone size={15} /></a> : <a className="button-primary" href={source.recordAccessUrl} target="_blank" rel="noopener noreferrer">Clerk's page <ExternalLink size={15} /></a>)}<a className="text-link" href={source.officialUrl} target="_blank" rel="noopener noreferrer">Court website <ArrowUpRight size={14} /></a></div></div>
+                <span className="external-badge">{source.onlinePortal ? <><ExternalLink size={13} /> External site</> : <><Phone size={13} /> Phone / in-person records</>}</span>
+              </article>)}</div>}
               <article className="source-card state-source"><div className="source-icon"><Landmark size={20} /></div><div className="source-main"><div className="source-kicker">STATEWIDE RESOURCE</div><h2>Supreme Court of Ohio</h2><p>Find statewide online services and court resources. Availability depends on the court and case type.</p><div className="source-links"><a className="button-primary" href="https://www.supremecourt.ohio.gov/online-services/" target="_blank" rel="noopener noreferrer">Browse online services <ExternalLink size={15} /></a></div></div><span className="external-badge"><ExternalLink size={13} /> External site</span></article>
               <div className="records-note"><strong>Before relying on a docket:</strong> Restricted, sealed, juvenile, and expunged matters may not be available online. A missing search result does not prove a case does not exist. Confirm deadlines and filings with the clerk.</div>
             </section>
