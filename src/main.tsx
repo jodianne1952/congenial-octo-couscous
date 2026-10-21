@@ -73,6 +73,7 @@ function App() {
   const [selected, setSelected] = useState<CaseRecord | null>(null);
   const [saved, setSaved] = useState<string[]>(readSavedCases);
   const [alertsEnabled, setAlertsEnabled] = useState(() => localStorage.getItem('ohio-docket-hub:alerts') === 'true');
+  const [sourceQuery, setSourceQuery] = useState('');
   const [mobileNavOpen, setMobileNavOpen] = useState(false);
 
   const counties = useMemo(() => ['All counties', ...new Set(demoCases.map(item => item.county))], []);
@@ -167,7 +168,8 @@ function App() {
             <section className="subpage">
               <div className="page-heading"><div><div className="eyebrow">SOURCE DIRECTORY</div><h1>Official court links</h1><p>Open court-provided records portals and verify case information with the clerk.</p></div></div>
               <div className="source-summary"><ShieldCheck size={18} /><p>Links below lead to external court websites. Availability and update timing vary by court. The hub does not import or monitor these records.</p></div>
-              <div className="source-list">{COURT_SOURCES.map(source => <article className="source-card" key={`${source.county}-${source.division}`}>
+              <section className="search-panel" aria-label="Find your county"><label className="search-label" htmlFor="county-search">Find your county</label><div className="search-input-wrap"><Search size={19} /><input id="county-search" value={sourceQuery} onChange={event => setSourceQuery(event.target.value)} placeholder="Start typing a county name — for example, Scioto" /></div></section>
+              <div className="source-list">{COURT_SOURCES.filter(source => source.county.toLowerCase().includes(sourceQuery.trim().toLowerCase())).map(source => <article className="source-card" key={`${source.county}-${source.division}`}>
                 <div className="source-icon"><Landmark size={20} /></div><div className="source-main"><div className="source-kicker">{source.county.toUpperCase()} COUNTY · {source.division.toUpperCase()}</div><h2>{source.name}</h2><p>{source.notes}</p>{source.clerkPhone && <p className="clerk-phone">Clerk’s office: <a href={`tel:${source.clerkPhone.replace(/[^0-9+]/g, '')}`}>{source.clerkPhone}</a></p>}<div className="source-links"><a className="button-primary" href={source.recordAccessUrl} target="_blank" rel="noopener noreferrer">Open records portal <ExternalLink size={15} /></a><a className="text-link" href={source.officialUrl} target="_blank" rel="noopener noreferrer">Court website <ArrowUpRight size={14} /></a></div></div>
                 <span className="external-badge"><ExternalLink size={13} /> External site</span>
               </article>)}</div>
